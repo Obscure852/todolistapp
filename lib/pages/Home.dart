@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'AddTask.dart';
+
 class Home extends StatefulWidget {
   static String id = "home_screen";
   @override
@@ -14,6 +16,30 @@ class _HomeState extends State<Home> {
         title: Text("My Todo List", style: TextStyle(color: Colors.white),),
         elevation: 0,
         backgroundColor: Colors.green,
+        actions: [
+          IconButton(
+              icon: Icon(Icons.add_circle, size: 30.0,color: Colors.white,),
+              onPressed: (){
+                Navigator.pushNamed(context, AddTask.id);
+              }),
+          PopupMenuButton(itemBuilder: (context){
+            return [
+                  PopupMenuItem(
+                      child: GestureDetector(
+                        onTap: (){
+                          print("You are signing out!.");
+                        },
+                        child: Row(
+                          children: [
+                            Icon(Icons.exit_to_app),
+                            Text("Sign Out", style: TextStyle(color: Colors.black),),
+                          ],
+                        ),
+                      )
+                  )
+            ];
+          })
+        ],
       ),
       body: Container(
         child: Center(

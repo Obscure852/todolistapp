@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:image_life/pages/AddTask.dart';
 import 'package:image_life/pages/Home.dart';
 import 'package:image_life/pages/Login.dart';
 import 'package:image_life/pages/Register.dart';
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
         Home.id : (context) => Home(),
         Login.id : (context) => Login(),
         Register.id : (context) => Register(),
+        AddTask.id : (context) => AddTask(),
       },
     );
   }
