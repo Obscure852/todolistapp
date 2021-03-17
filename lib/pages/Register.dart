@@ -25,15 +25,19 @@ class _RegisterState extends State<Register> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Sign Up"),
+        title: Text("Sign up", style: TextStyle(color: Colors.black)),
         elevation: 0,
         backgroundColor: Colors.white,
+        iconTheme: IconThemeData(
+          color: Colors.black,
+        )
       ),
       body: Container(
         child: SingleChildScrollView(
           child: Container(
             padding: EdgeInsets.only(top: 60.0, right: 30.0, left: 30.0),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 InputFormField(
                   hintText: "Username ...",
@@ -82,8 +86,8 @@ class _RegisterState extends State<Register> {
                 ),
                 CustomButton(
                     buttonText: "Create Account",
-                    buttonColor: Colors.white,
-                    textButtonColor: Colors.black,
+                    buttonColor: Colors.green,
+                    textButtonColor: Colors.white,
                     onClicked: (){
                       Navigator.pushNamed(context, Home.id);
                     }
