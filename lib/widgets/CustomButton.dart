@@ -11,10 +11,12 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(top: 60.0),
+      padding: EdgeInsets.only(top: 10.0),
       child: Material(
-        borderRadius: BorderRadius.circular(30),
         child: MaterialButton(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30)
+          ),
           child: Text("$buttonText", style: TextStyle(color: textButtonColor, fontWeight: FontWeight.bold),),
           color: buttonColor,
           onPressed: onClicked,

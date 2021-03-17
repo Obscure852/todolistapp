@@ -19,6 +19,8 @@ class _RegisterState extends State<Register> {
   String _emailErrorText = "";
   String _passwordErrorText = "";
 
+  bool obscureText = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,8 +61,18 @@ class _RegisterState extends State<Register> {
                 ),
                 InputFormField(
                   hintText: "Password ...",
-                  obscureText: false,
-                  icon: IconButton(icon: Icon(Icons.lock), onPressed: (){},),
+                  obscureText: obscureText,
+                  icon: IconButton(icon: Icon(Icons.lock), onPressed: (){
+                    if(obscureText){
+                      setState(() {
+                        obscureText = false;
+                      });
+                    }else{
+                      setState(() {
+                        obscureText = true;
+                      });
+                    }
+                  },),
                   controller: _passwordController,
                   errorText: _passwordErrorText,
                   inputAction: TextInputAction.done,
